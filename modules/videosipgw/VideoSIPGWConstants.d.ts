@@ -1,0 +1,11 @@
+export type VideoSIPGWConstants =
+  | "available"
+  | "undefined"
+  | "busy"
+  | "on"
+  | "off"
+  | "pending"
+  | "retrying"
+  | "failed"
+  | "error_no_connection"
+  | "error_session_already_exists"

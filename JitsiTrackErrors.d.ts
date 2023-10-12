@@ -1,0 +1,13 @@
+export type JitsiTrackErrors =
+  | "gum.constraint_failed"
+  | "gum.electron_desktop_picker_error"
+  | "gum.electron_desktop_picker_not_found"
+  | "gum.general"
+  | "gum.not_found"
+  | "gum.permission_denied"
+  | "gum.screensharing_generic_error"
+  | "gum.screensharing_user_canceled"
+  | "gum.timeout"
+  | "track.track_is_disposed"
+  | "track.no_stream_found"
+  | "gum.unsupported_resolution"

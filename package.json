@@ -1,0 +1,37 @@
+{
+  "name": "types-lib-jitsi-meet",
+  "version": "0.0.1",
+  "description": "Lightweight type-only library for JitsiMeetJS",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndyLeezard/types-lib-jitsi-meet"
+  },
+  "types": "index.d.ts",
+  "keywords": [
+    "jingle",
+    "webrtc",
+    "xmpp",
+    "browser",
+    "jitsi",
+    "types"
+  ],
+  "author": {
+    "name": "Jitsi",
+    "email": "contact@jitsi.org",
+    "url": "https://github.com/jitsi"
+  },
+  "contributors": [
+    {
+      "name": "Andy Lee",
+      "email": "a.lee.intl@gmail.com",
+      "url": "https://github.com/AndyLeezard"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/AndyLeezard/types-lib-jitsi-meet/issues"
+  },
+  "homepage": "https://github.com/AndyLeezard/types-lib-jitsi-meet#readme",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "license": "Apache-2.0"
+}

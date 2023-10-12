@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "noEmit": true, // Do not emit output (no .d.ts or .js files)
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+  },
+  "exclude": ["node_modules"]
+}
