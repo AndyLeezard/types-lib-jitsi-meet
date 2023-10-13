@@ -53,9 +53,23 @@ export type IJitsiMeetJSOptions = {
     runInLiteMode?: boolean
     ssrcRewritingEnabled?: boolean
   }
-  
-  /** Statistics.init */
+
+  /** Audio options */
+  /** Disable audio statistics polling (thereby perhaps improving performance)
+   * 
+   * Recommendation: `true`
+   * 
+   * Also used in `Statistics.js`
+   */
   disableAudioLevels?: boolean;
+  /** disable all muting operations of remote participants */
+  disableRemoteMute?: boolean;
+  /** turn off audio input when joining */
+  startWithAudioMuted?: boolean;
+  /** mute audio input and output */
+  startSilent?: boolean;
+  
+  /** Statistics.js - init */
   pcStatsInterval?: number;
   audioLevelsInterval?: number;
   longTasksStatsInterval?: number;
