@@ -53,6 +53,13 @@ export type IJitsiMeetJSOptions = {
     runInLiteMode?: boolean
     ssrcRewritingEnabled?: boolean
   }
+  
+  /** Statistics.init */
+  disableAudioLevels?: boolean;
+  pcStatsInterval?: number;
+  audioLevelsInterval?: number;
+  longTasksStatsInterval?: number;
+  disableThirdPartyRequests?: boolean;
 
   /** RTCStats */
   analytics?: {
@@ -64,6 +71,15 @@ export type IJitsiMeetJSOptions = {
     rtcstatsStoreLogs?: boolean
     rtcstatsUseLegacy?: boolean
   }
+
+  /** InitOptions */
+  useIPv6?: unknown,
+  disableSimulcast?: unknown,
+  callStatsCustomScriptUrl?: unknown,
+  disableRtx?: unknown,
+  disabledCodec?: unknown,
+  preferredCodec?: unknown,
+  useTurnUdp?: unknown
 }
 
 export type JitsiMeetJSType = {
