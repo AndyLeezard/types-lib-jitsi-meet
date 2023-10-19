@@ -1,10 +1,60 @@
-import EventEmitter from "events"
 import JitsiConference from "../../JitsiConference"
 import { MediaType } from "../../service/RTC/MediaType"
 import { VideoType } from "../../service/RTC/VideoType"
 import TraceablePeerConnection from "./TraceablePeerConnection"
 
-type JitsiTrack = EventEmitter &
+type TNodeEventEmitter = {
+  /** Returns EventEmitter type */
+  addListener: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  emit: (eventName: string | symbol, ...args: any[]) => boolean
+  eventNames: () => (string | symbol)[]
+  getMaxListeners: () => number
+  listenerCount: (
+    eventName: string | symbol,
+    listener?: Function | undefined
+  ) => number
+  listeners: (eventName: string | symbol) => Function[]
+  /** Returns EventEmitter type */
+  off: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  /** Returns EventEmitter type */
+  on: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  /** Returns EventEmitter type */
+  once: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  /** Returns EventEmitter type */
+  prependListener: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  /** Returns EventEmitter type */
+  prependOnceListener: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  rawListeners: (eventName: string | symbol) => Function[]
+  /** Returns EventEmitter type */
+  removeAllListeners: (event?: string | symbol | undefined) => unknown
+  /** Returns EventEmitter type */
+  removeListener: (
+    eventName: string | symbol,
+    listener: (...args: any[]) => void
+  ) => unknown
+  /** Returns EventEmitter type */
+  setMaxListeners: (n: number) => unknown
+}
+
+type JitsiTrack = TNodeEventEmitter &
   JitsiTrackBaseMethods & {
     conference: JitsiConference
     containers: Array<HTMLElement>
