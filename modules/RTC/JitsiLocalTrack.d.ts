@@ -1,19 +1,37 @@
-import JitsiTrack from './JitsiTrack';
-import { CameraFacingMode } from '../../service/RTC/CameraFacingMode';
+import JitsiTrack from "./JitsiTrack"
+import JitsiTrackCommonMethods from "./JitsiTrackCommonMethods"
+import { CameraFacingMode } from "../../service/RTC/CameraFacingMode"
 
-export default class JitsiLocalTrack extends JitsiTrack {
-  constructor( trackInfo: { rtcId: number, stream: unknown, track: unknown, mediaType: unknown, videoType: unknown, effects: unknown, resolution: unknown, deviceId: string, facingMode: CameraFacingMode, sourceId: unknown } ) // TODO:
-  isEnded: () => boolean;
-  setEffect: ( effect: unknown ) => Promise<unknown>; // TODO:
-  mute: () => Promise<void>;
-  unmute: () => Promise<void>;
-  dispose: () => Promise<void>;
-  isMuted: () => boolean;
-  isLocal: () => true;
-  getDeviceId: () => string;
-  getParticipantId: () => string;
-  getCameraFacingMode: () => CameraFacingMode | undefined;
-  stopStream: () => void;
-  isReceivingData: () => boolean;
-  toString: () => string;
+type JitsiLocalTrackMethods = {
+  getCameraFacingMode: () => CameraFacingMode | undefined
+  getDeviceId: () => string
+  isEnded: () => boolean
+  isLocal: () => true
+  isReceivingData: () => boolean
+  mute: () => Promise<void>
+  setEffect: (effect: unknown) => Promise<unknown> // TODO:
+  stopStream: () => void
+  unmute: () => Promise<void>
+
+  /** detected by inspection */
+  getDuration: () => unknown
+  _switchCamera: () => void
 }
+
+type JitsiLocalTrack = JitsiTrack &
+  JitsiTrackCommonMethods &
+  JitsiLocalTrackMethods & {
+    maxEnabledResolution?: number
+    metadata: {
+      timestamp: number
+    }
+    resolution: number
+    rtcId: number
+    /** after inspection it has been always undefined */
+    sourceId: unknown
+    sourceType: null
+    storedMSID: string
+    videoType: null | undefined | "camera"
+  }
+
+export default JitsiLocalTrack
